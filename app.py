@@ -43,7 +43,7 @@ if "user_api_key" in st.session_state and st.session_state.user_api_key:
     os.environ["GOOGLE_API_KEY"] = st.session_state.user_api_key
 
 if 'language' not in st.session_state:
-    st.session_state.language = "zh"
+    st.session_state.language = "en"
 
 # Helper for Caching
 @st.cache_data(show_spinner=False)
@@ -302,7 +302,7 @@ with tab1:
 
     # Manual Mode Toggle (Restored)
     is_offline = getattr(st.session_state.extractor, 'is_offline', False)
-    manual_mode = st.toggle(get_text("toggle_manual", st.session_state.language), value=is_offline)
+    manual_mode = st.toggle(get_text("toggle_manual", st.session_state.language), value=False)
 
     # Input Area
     with st.form("action_form", clear_on_submit=False):
