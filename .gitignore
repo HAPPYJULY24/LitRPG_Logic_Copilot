@@ -1,35 +1,54 @@
-# Python
+# --- LitRPG Logic Copilot 核心安全规则 ---
+# 绝对不要上传用户存档和 API 密钥
+.env
+.envrc
+saves/*.json
+*.tmp
+
+# 但保留 saves 文件夹结构
+!saves/.gitkeep
+
+# --- Python 标准忽略规则 ---
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
-env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# --- 虚拟环境 ---
 venv/
+env/
+.venv/
 ENV/
-env.bak/
-venv.bak/
 
-# Environment variables
-.env
-
-# Streamlit
-.streamlit/
-
-# IDE
+# --- IDE & OS ---
 .vscode/
 .idea/
+.streamlit/
 *.swp
 *.swo
-*~
-
-# OS
 .DS_Store
 Thumbs.db
 
-# User data (exclude from Git to prevent accidental commits)
-saves/*.json
-*.tmp
-
-# But keep the saves directory structure in Git
-!saves/.gitkeep
+# --- 测试与日志 ---
+htmlcov/
+.coverage
+.pytest_cache/
+*.log
